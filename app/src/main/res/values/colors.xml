@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="colorPrimary">#3795BD</color> <!-- Blue -->
+    <color name="colorPrimaryLight">#D2E7F0</color> <!-- Blue -->
+    <color name="colorGreen">#387F39</color> <!-- Green -->
+    <color name="colorBackground">#F7F7F8</color> <!-- Light Gray -->
+
+    <!-- Secondary Colors -->
+    <color name="colorOrange">#FF9100</color> <!-- Orange -->
+    <color name="colorYellow">#FABC3F</color> <!-- Yellow -->
+    <color name="colorDarkGray">#424242</color> <!-- Dark Gray -->
+
+</resources>
