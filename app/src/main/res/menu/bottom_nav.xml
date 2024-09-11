@@ -8,8 +8,4 @@
         android:id="@+id/nav_stat"
         android:icon="@drawable/statics"
         android:title="Stats" />
-    <item
-        android:id="@+id/nav_setting"
-        android:icon="@drawable/gear"
-        android:title="Settings" />
 </menu>

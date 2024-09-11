@@ -13,6 +13,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class Constants {
+    public static final String APPLIANCES = "APPLIANCES";
 
     public static void checkApp(Activity activity) {
         String appName = "energyconsumptiontracking";
