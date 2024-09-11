@@ -26,18 +26,21 @@ public class AddActivity extends AppCompatActivity {
         binding = ActivityAddBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        int index = getIntent().getIntExtra("pos",-1);
+
         binding.toolbar.back.setOnClickListener(v -> getOnBackPressedDispatcher().onBackPressed());
-        binding.toolbar.title.setText("New Appliance");
 
         ArrayList<AppliancesModel> list = Stash.getArrayList(Constants.APPLIANCES, AppliancesModel.class);
 
-        int index = getIntent().getIntExtra("pos",-1);
         if (index != -1) {
+            binding.toolbar.title.setText("Update Appliance");
             AppliancesModel appliance = list.get(index);
             binding.name.getEditText().setText(appliance.getName());
             binding.power.getEditText().setText(String.valueOf(appliance.getPower()));
             binding.hour.getEditText().setText(String.valueOf(appliance.getHours()));
             binding.units.getEditText().setText(String.valueOf(appliance.getNumberOfUnits()));
+        } else {
+            binding.toolbar.title.setText("New Appliance");
         }
 
         binding.save.setOnClickListener(v -> {

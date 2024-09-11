@@ -40,7 +40,7 @@ public class ApplianceAdapter extends RecyclerView.Adapter<ApplianceAdapter.Appl
         holder.name.setText(model.getName());
         holder.hour.setText(model.getHours() + " H");
         holder.power.setText(model.getPower() + " W");
-        holder.consumption.setText(model.calculateEnergyConsumption(-1) + " kWh");
+        holder.consumption.setText(String.format("%.2f", model.calculateEnergyConsumption(-1)) + " kWh");
 
         holder.edit.setOnClickListener(v -> {
             context.startActivity(new Intent(context, AddActivity.class).putExtra("pos", holder.getAdapterPosition()));

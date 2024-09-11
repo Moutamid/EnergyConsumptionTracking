@@ -40,9 +40,9 @@ public class StastAdapter extends RecyclerView.Adapter<StastAdapter.ApplianceVH>
         holder.hour.setText(model.getHours() + " H");
         holder.power.setText(model.getPower() + " W");
         double consumption = model.calculateEnergyConsumption(period);
-        holder.consumption.setText(consumption + " kWh");
+        holder.consumption.setText(String.format("%.2f", consumption) + " kWh");
         double value = consumption * cost;
-        holder.cost.setText("$" + value);
+        holder.cost.setText("$" + String.format("%.2f", value));
     }
 
     @Override

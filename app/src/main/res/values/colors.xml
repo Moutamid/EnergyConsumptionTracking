@@ -2,6 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="title">#FFFFFFFF</color>
 
     <color name="colorPrimary">#3795BD</color> <!-- Blue -->
     <color name="colorPrimaryLight">#D2E7F0</color> <!-- Blue -->
