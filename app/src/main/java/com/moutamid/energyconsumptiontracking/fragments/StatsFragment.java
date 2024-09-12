@@ -1,9 +1,11 @@
 package com.moutamid.energyconsumptiontracking.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
@@ -36,6 +38,10 @@ public class StatsFragment extends Fragment {
             if (binding.cost.getEditText().getText().toString().isEmpty()) {
                 Toast.makeText(requireContext(), "Cost is empty", Toast.LENGTH_SHORT).show();
             } else {
+                InputMethodManager imm = (InputMethodManager) requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                if (imm != null) {
+                    imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                }
                 ArrayList<AppliancesModel> list = Stash.getArrayList(Constants.APPLIANCES, AppliancesModel.class);
                 int period = binding.daily.isChecked() ? 1 :
                         binding.week.isChecked() ? 7 :

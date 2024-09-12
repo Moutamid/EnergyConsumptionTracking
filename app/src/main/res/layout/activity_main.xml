@@ -20,6 +20,7 @@
         android:layout_alignParentBottom="true"
         android:id="@+id/bottom_nav"
         app:itemIconTint="@color/nav_color"
+        app:itemTextColor="@color/black"
         app:backgroundTint="@color/colorBackground"
         app:labelVisibilityMode="selected" />
 

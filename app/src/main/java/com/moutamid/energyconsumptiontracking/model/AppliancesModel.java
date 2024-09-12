@@ -1,14 +1,18 @@
 package com.moutamid.energyconsumptiontracking.model;
 
+import java.util.ArrayList;
+
 public class AppliancesModel {
     private String id, name;
-    private double hours; // Daily operating time
+    private int number;
+    private ArrayList<Double> hours; // Daily operating time
     private double power; // (W)
     private double numberOfUnits; // Number of appliance units
 
-    public AppliancesModel(String id, String name, double hours, double power, double numberOfUnits) {
+    public AppliancesModel(String id, String name, int number, ArrayList<Double> hours, double power, double numberOfUnits) {
         this.id = id;
         this.name = name;
+        this.number = number;
         this.hours = hours;
         this.power = power;
         this.numberOfUnits = numberOfUnits;
@@ -30,11 +34,19 @@ public class AppliancesModel {
         this.name = name;
     }
 
-    public double getHours() {
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public ArrayList<Double> getHours() {
         return hours;
     }
 
-    public void setHours(double hours) {
+    public void setHours(ArrayList<Double> hours) {
         this.hours = hours;
     }
 
@@ -54,10 +66,10 @@ public class AppliancesModel {
         this.numberOfUnits = numberOfUnits;
     }
 
-    public double calculateEnergyConsumption(int period) {
+    public double calculateEnergyConsumption(int period, double hours) {
         if (period != -1) {
-            return ((hours * period) * power * numberOfUnits) / 1000; // kWh
+            return ((hours * period) * power * numberOfUnits) / 1000;
         }
-        return (hours * power * numberOfUnits) / 1000; // kWh
+        return (hours * power * numberOfUnits) / 1000;
     }
 }
