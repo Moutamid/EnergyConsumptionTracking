@@ -41,13 +41,13 @@ public class ApplianceAdapter extends RecyclerView.Adapter<ApplianceAdapter.Appl
         holder.number.setText(String.valueOf(model.getNumber()));
         holder.power.setText(model.getPower() + " W");
 
-        holder.mon.setText(model.getHours().get(0) + " H");
-        holder.tue.setText(model.getHours().get(1) + " H");
-        holder.wed.setText(model.getHours().get(2) + " H");
-        holder.thu.setText(model.getHours().get(3) + " H");
-        holder.fri.setText(model.getHours().get(4) + " H");
-        holder.sat.setText(model.getHours().get(5) + " H");
-        holder.sun.setText(model.getHours().get(6) + " H");
+        holder.mon.setText(model.getHours().get(0) + "H");
+        holder.tue.setText(model.getHours().get(1) + "H");
+        holder.wed.setText(model.getHours().get(2) + "H");
+        holder.thu.setText(model.getHours().get(3) + "H");
+        holder.fri.setText(model.getHours().get(4) + "H");
+        holder.sat.setText(model.getHours().get(5) + "H");
+        holder.sun.setText(model.getHours().get(6) + "H");
 
         holder.monconsumption.setText(String.format("%.2f", model.calculateEnergyConsumption(-1, model.getHours().get(0))));
         holder.tueconsumption.setText(String.format("%.2f", model.calculateEnergyConsumption(-1, model.getHours().get(1))));

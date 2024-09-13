@@ -1,6 +1,9 @@
 package com.moutamid.energyconsumptiontracking.ui;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -32,6 +35,14 @@ public class AddActivity extends AppCompatActivity {
 
         ArrayList<AppliancesModel> list = Stash.getArrayList(Constants.APPLIANCES, AppliancesModel.class);
 
+        setHourValidator(binding.mon.getEditText(), "Monday");
+        setHourValidator(binding.tue.getEditText(), "Tuesday");
+        setHourValidator(binding.wed.getEditText(), "Wednesday");
+        setHourValidator(binding.thu.getEditText(), "Thursday");
+        setHourValidator(binding.fri.getEditText(), "Friday");
+        setHourValidator(binding.sat.getEditText(), "Saturday");
+        setHourValidator(binding.sun.getEditText(), "Sunday");
+
         if (index != -1) {
             binding.toolbar.title.setText("Update Appliance");
             AppliancesModel appliance = list.get(index);
@@ -56,28 +67,28 @@ public class AddActivity extends AppCompatActivity {
                     AppliancesModel model = list.get(index);
                     model.setName(binding.name.getEditText().getText().toString());
                     model.setNumber(Integer.parseInt(binding.number.getEditText().getText().toString()));
-                    ArrayList<Double> hours = new ArrayList<>();
-                    hours.add(Double.parseDouble(binding.mon.getEditText().getText().toString()));
-                    hours.add(Double.parseDouble(binding.tue.getEditText().getText().toString()));
-                    hours.add(Double.parseDouble(binding.wed.getEditText().getText().toString()));
-                    hours.add(Double.parseDouble(binding.thu.getEditText().getText().toString()));
-                    hours.add(Double.parseDouble(binding.fri.getEditText().getText().toString()));
-                    hours.add(Double.parseDouble(binding.sat.getEditText().getText().toString()));
-                    hours.add(Double.parseDouble(binding.sun.getEditText().getText().toString()));
+                    ArrayList<Integer> hours = new ArrayList<>();
+                    hours.add(Integer.parseInt(binding.mon.getEditText().getText().toString()));
+                    hours.add(Integer.parseInt(binding.tue.getEditText().getText().toString()));
+                    hours.add(Integer.parseInt(binding.wed.getEditText().getText().toString()));
+                    hours.add(Integer.parseInt(binding.thu.getEditText().getText().toString()));
+                    hours.add(Integer.parseInt(binding.fri.getEditText().getText().toString()));
+                    hours.add(Integer.parseInt(binding.sat.getEditText().getText().toString()));
+                    hours.add(Integer.parseInt(binding.sun.getEditText().getText().toString()));
                     model.setHours(hours);
                     model.setPower(Double.parseDouble(binding.power.getEditText().getText().toString()));
                     model.setNumberOfUnits(Double.parseDouble(binding.units.getEditText().getText().toString()));
                     list.set(index, model);
                     Toast.makeText(this, "Appliance Updated", Toast.LENGTH_SHORT).show();
                 } else {
-                    ArrayList<Double> hours = new ArrayList<>();
-                    hours.add(Double.parseDouble(binding.mon.getEditText().getText().toString()));
-                    hours.add(Double.parseDouble(binding.tue.getEditText().getText().toString()));
-                    hours.add(Double.parseDouble(binding.wed.getEditText().getText().toString()));
-                    hours.add(Double.parseDouble(binding.thu.getEditText().getText().toString()));
-                    hours.add(Double.parseDouble(binding.fri.getEditText().getText().toString()));
-                    hours.add(Double.parseDouble(binding.sat.getEditText().getText().toString()));
-                    hours.add(Double.parseDouble(binding.sun.getEditText().getText().toString()));
+                    ArrayList<Integer> hours = new ArrayList<>();
+                    hours.add(Integer.parseInt(binding.mon.getEditText().getText().toString()));
+                    hours.add(Integer.parseInt(binding.tue.getEditText().getText().toString()));
+                    hours.add(Integer.parseInt(binding.wed.getEditText().getText().toString()));
+                    hours.add(Integer.parseInt(binding.thu.getEditText().getText().toString()));
+                    hours.add(Integer.parseInt(binding.fri.getEditText().getText().toString()));
+                    hours.add(Integer.parseInt(binding.sat.getEditText().getText().toString()));
+                    hours.add(Integer.parseInt(binding.sun.getEditText().getText().toString()));
                     AppliancesModel model = new AppliancesModel(
                             UUID.randomUUID().toString(),
                             binding.name.getEditText().getText().toString(),
@@ -95,6 +106,34 @@ public class AddActivity extends AppCompatActivity {
         });
     }
 
+    private boolean isValidHour(String input) {
+        if (input.isEmpty()) return false;
+        try {
+            int value = Integer.parseInt(input);
+            return value >= 0 && value <= 24;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+    private void setHourValidator(EditText editText, String dayName) {
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                String input = s.toString();
+                if (!isValidHour(input)) {
+                    editText.setError(dayName + " must be between 0 and 24");
+                }
+            }
+        });
+    }
+
     private boolean valid() {
         if (binding.name.getEditText().getText().toString().isEmpty()) {
             Toast.makeText(this, "Name is empty", Toast.LENGTH_SHORT).show();
@@ -104,34 +143,36 @@ public class AddActivity extends AppCompatActivity {
             Toast.makeText(this, "Power is empty", Toast.LENGTH_SHORT).show();
             return false;
         }
-        if (binding.mon.getEditText().getText().toString().isEmpty()) {
-            Toast.makeText(this, "Monday is empty", Toast.LENGTH_SHORT).show();
-            return false;
+
+        EditText[] dayFields = {
+                binding.mon.getEditText(),
+                binding.tue.getEditText(),
+                binding.wed.getEditText(),
+                binding.thu.getEditText(),
+                binding.fri.getEditText(),
+                binding.sat.getEditText(),
+                binding.sun.getEditText()
+        };
+
+        String[] dayNames = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+
+        for (int i = 0; i < dayFields.length; i++) {
+            String input = dayFields[i].getText().toString();
+            if (input.isEmpty()) {
+                dayFields[i].setError(dayNames[i] + " is empty");
+                return false;
+            }
         }
-        if (binding.tue.getEditText().getText().toString().isEmpty()) {
-            Toast.makeText(this, "Tuesday is empty", Toast.LENGTH_SHORT).show();
-            return false;
+
+        for (int i = 0; i < dayFields.length; i++) {
+            String input = dayFields[i].getText().toString();
+            if (!isValidHour(input)) {
+                dayFields[i].setError(dayNames[i] + " must be between 0 and 24");
+                Toast.makeText(this, dayNames[i] + " has an invalid input", Toast.LENGTH_SHORT).show();
+                return false;
+            }
         }
-        if (binding.wed.getEditText().getText().toString().isEmpty()) {
-            Toast.makeText(this, "Wednesday is empty", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        if (binding.thu.getEditText().getText().toString().isEmpty()) {
-            Toast.makeText(this, "Thursday is empty", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        if (binding.fri.getEditText().getText().toString().isEmpty()) {
-            Toast.makeText(this, "Friday is empty", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        if (binding.sat.getEditText().getText().toString().isEmpty()) {
-            Toast.makeText(this, "Saturday is empty", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        if (binding.sun.getEditText().getText().toString().isEmpty()) {
-            Toast.makeText(this, "Sunday is empty", Toast.LENGTH_SHORT).show();
-            return false;
-        }
+
         if (binding.units.getEditText().getText().toString().isEmpty()) {
             Toast.makeText(this, "Units is empty", Toast.LENGTH_SHORT).show();
             return false;

@@ -5,11 +5,11 @@ import java.util.ArrayList;
 public class AppliancesModel {
     private String id, name;
     private int number;
-    private ArrayList<Double> hours; // Daily operating time
+    private ArrayList<Integer> hours; // Daily operating time
     private double power; // (W)
     private double numberOfUnits; // Number of appliance units
 
-    public AppliancesModel(String id, String name, int number, ArrayList<Double> hours, double power, double numberOfUnits) {
+    public AppliancesModel(String id, String name, int number, ArrayList<Integer> hours, double power, double numberOfUnits) {
         this.id = id;
         this.name = name;
         this.number = number;
@@ -42,11 +42,11 @@ public class AppliancesModel {
         this.number = number;
     }
 
-    public ArrayList<Double> getHours() {
+    public ArrayList<Integer> getHours() {
         return hours;
     }
 
-    public void setHours(ArrayList<Double> hours) {
+    public void setHours(ArrayList<Integer> hours) {
         this.hours = hours;
     }
 

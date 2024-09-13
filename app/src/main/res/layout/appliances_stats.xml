@@ -111,17 +111,18 @@
                 android:layout_weight="1">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardElevation="0dp"
                     app:cardBackgroundColor="@color/colorGreen"
                     app:cardCornerRadius="8dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/mon"
                         tools:text="12H"
+                        android:gravity="center"
                         android:textColor="@color/title"
                         android:layout_margin="5dp" />
 
@@ -141,18 +142,20 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
+                android:layout_marginHorizontal="5dp"
                 android:layout_weight="1">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardElevation="0dp"
                     app:cardBackgroundColor="@color/colorGreen"
                     app:cardCornerRadius="8dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="center"
                         android:id="@+id/tue"
                         tools:text="12H"
                         android:textColor="@color/title"
@@ -177,15 +180,16 @@
                 android:layout_weight="1">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardElevation="0dp"
                     app:cardBackgroundColor="@color/colorGreen"
                     app:cardCornerRadius="8dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="center"
                         android:id="@+id/wed"
                         tools:text="12H"
                         android:textColor="@color/title"
@@ -206,18 +210,20 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
+                android:layout_marginHorizontal="5dp"
                 android:layout_weight="1">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardElevation="0dp"
                     app:cardBackgroundColor="@color/colorGreen"
                     app:cardCornerRadius="8dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="center"
                         android:id="@+id/thu"
                         tools:text="12H"
                         android:textColor="@color/title"
@@ -241,15 +247,16 @@
                 android:layout_weight="1">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardElevation="0dp"
                     app:cardBackgroundColor="@color/colorGreen"
                     app:cardCornerRadius="8dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="center"
                         android:id="@+id/fri"
                         tools:text="12H"
                         android:textColor="@color/title"
@@ -270,18 +277,20 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
+                android:layout_marginHorizontal="5dp"
                 android:layout_weight="1">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardElevation="0dp"
                     app:cardBackgroundColor="@color/colorGreen"
                     app:cardCornerRadius="8dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="center"
                         android:id="@+id/sat"
                         tools:text="12H"
                         android:textColor="@color/title"
@@ -305,15 +314,16 @@
                 android:layout_weight="1">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardElevation="0dp"
                     app:cardBackgroundColor="@color/colorGreen"
                     app:cardCornerRadius="8dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="center"
                         android:id="@+id/sun"
                         tools:text="12H"
                         android:textColor="@color/title"
@@ -354,14 +364,15 @@
                 android:layout_weight="1">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardElevation="0dp"
                     app:cardBackgroundColor="@color/colorOrange"
                     app:cardCornerRadius="8dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
+                        android:gravity="center"
                         android:layout_height="wrap_content"
                         android:id="@+id/monconsumption"
                         tools:text="12H"
@@ -383,19 +394,21 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:layout_marginHorizontal="5dp"
                 android:gravity="center"
                 android:layout_weight="1">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardElevation="0dp"
                     app:cardBackgroundColor="@color/colorOrange"
                     app:cardCornerRadius="8dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="center"
                         android:id="@+id/tueconsumption"
                         tools:text="12H"
                         android:textColor="@color/title"
@@ -420,15 +433,16 @@
                 android:layout_weight="1">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardElevation="0dp"
                     app:cardBackgroundColor="@color/colorOrange"
                     app:cardCornerRadius="8dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="center"
                         android:id="@+id/wedconsumption"
                         tools:text="12H"
                         android:textColor="@color/title"
@@ -449,18 +463,20 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
+                android:layout_marginHorizontal="5dp"
                 android:layout_weight="1">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardElevation="0dp"
                     app:cardBackgroundColor="@color/colorOrange"
                     app:cardCornerRadius="8dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="center"
                         android:id="@+id/thuconsumption"
                         tools:text="12H"
                         android:textColor="@color/title"
@@ -484,15 +500,16 @@
                 android:layout_weight="1">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardElevation="0dp"
                     app:cardBackgroundColor="@color/colorOrange"
                     app:cardCornerRadius="8dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="center"
                         android:id="@+id/friconsumption"
                         tools:text="12H"
                         android:textColor="@color/title"
@@ -512,19 +529,21 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:layout_marginHorizontal="5dp"
                 android:gravity="center"
                 android:layout_weight="1">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardElevation="0dp"
                     app:cardBackgroundColor="@color/colorOrange"
                     app:cardCornerRadius="8dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="center"
                         android:id="@+id/satconsumption"
                         tools:text="12H"
                         android:textColor="@color/title"
@@ -548,15 +567,16 @@
                 android:layout_weight="1">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardElevation="0dp"
                     app:cardBackgroundColor="@color/colorOrange"
                     app:cardCornerRadius="8dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="center"
                         android:id="@+id/sunconsumption"
                         tools:text="12H"
                         android:textColor="@color/title"
