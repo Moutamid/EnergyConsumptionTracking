@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        Constants.checkApp(this);
 
         binding.bottomNav.setItemActiveIndicatorColor(ColorStateList.valueOf(getColor(R.color.colorPrimaryLight)));
         binding.bottomNav.setOnNavigationItemSelectedListener(item -> {
